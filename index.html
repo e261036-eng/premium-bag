@@ -35,8 +35,16 @@ box-shadow:0 0 10px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-.card img{
-width:280px;
+/* Image Slider */
+
+.slider{
+position:relative;
+max-width:400px;
+margin:auto;
+}
+
+.slider img{
+width:100%;
 border-radius:10px;
 }
 
@@ -44,6 +52,12 @@ border-radius:10px;
 font-size:26px;
 color:green;
 font-weight:bold;
+}
+
+.stock{
+color:red;
+font-weight:bold;
+margin:10px 0;
 }
 
 .offer{
@@ -61,7 +75,7 @@ margin:10px;
 border-radius:5px;
 }
 
-input,textarea{
+input,textarea,select{
 width:90%;
 padding:10px;
 margin:8px;
@@ -83,13 +97,17 @@ button:hover{
 background:#e60000;
 }
 
-.whatsapp{
-display:inline-block;
-margin-top:15px;
+/* Floating WhatsApp */
+
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
 background:#25D366;
 color:white;
-padding:10px 20px;
-border-radius:5px;
+padding:15px;
+border-radius:50%;
+font-size:20px;
 text-decoration:none;
 }
 
@@ -106,13 +124,19 @@ Natural Hair Color
 
 <div class="card">
 
-<img src="https://i.ibb.co.com/tPY43dbr/hair-color.jpg">
+<div class="slider">
+<img id="slide" src="https://i.ibb.co.com/tPY43dbr/hair-color.jpg">
+</div>
 
 <h2>Natural Hair Color</h2>
 
 <p>100% safe and easy hair coloring solution.</p>
 
-<div class="price">1200 BDT</div>
+<div class="price" id="price">1200 BDT</div>
+
+<div class="stock">
+⚡ Only <span id="stock">7</span> Pieces Left
+</div>
 
 <div class="offer">
 🔥 Special Offer Today Only
@@ -133,21 +157,86 @@ Natural Hair Color
 
 <textarea name="address" placeholder="Your Address" required></textarea>
 
+<label>Select Quantity</label>
+
+<select name="quantity" onchange="changePrice(this.value)">
+
+<option value="1">1 Piece</option>
+<option value="2">2 Pieces</option>
+<option value="3">3 Pieces</option>
+
+</select>
+
 <br>
 
 <button type="submit">Place Order</button>
 
 </form>
 
-<br>
+</div>
 
-<a class="whatsapp" href="https://wa.me/880XXXXXXXXXX">
-Order via WhatsApp
+</div>
+
+<a class="whatsapp-float" href="https://wa.me/880XXXXXXXXXX">
+💬
 </a>
 
-</div>
+<script>
 
-</div>
+/* Price change */
+
+function changePrice(q){
+
+if(q==1){
+document.getElementById("price").innerText="1200 BDT";
+}
+
+if(q==2){
+document.getElementById("price").innerText="2200 BDT";
+}
+
+if(q==3){
+document.getElementById("price").innerText="3000 BDT";
+}
+
+}
+
+/* Image Slider */
+
+var images=[
+"https://i.ibb.co.com/tPY43dbr/hair-color.jpg",
+"https://i.ibb.co.com/tPY43dbr/hair-color.jpg",
+"https://i.ibb.co.com/tPY43dbr/hair-color.jpg"
+];
+
+var i=0;
+
+setInterval(function(){
+
+i++;
+
+if(i>=images.length){
+i=0;
+}
+
+document.getElementById("slide").src=images[i];
+
+},3000);
+
+/* Stock counter */
+
+var stock=7;
+
+setInterval(function(){
+
+if(stock>3){
+stock--;
+document.getElementById("stock").innerText=stock;
+}
+
+},8000);
+
+</script>
 
 </body>
 </html>
