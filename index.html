@@ -1,241 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hair Color Offer</title>
-
+<title>প্রিমিয়াম স্টাইলিশ লেদার হ্যান্ডব্যাগ</title>
 <style>
-
-body{
-font-family: Arial;
-margin:0;
-background:#f2f2f2;
-}
-
-.header{
-background:#111;
-color:white;
-text-align:center;
-padding:20px;
-font-size:28px;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-text-align:center;
-}
-
-/* Image Slider */
-
-.slider{
-position:relative;
-max-width:400px;
-margin:auto;
-}
-
-.slider img{
-width:100%;
-border-radius:10px;
-}
-
-.price{
-font-size:26px;
-color:green;
-font-weight:bold;
-}
-
-.stock{
-color:red;
-font-weight:bold;
-margin:10px 0;
-}
-
-.offer{
-background:red;
-color:white;
-padding:10px;
-margin:15px 0;
-border-radius:5px;
-}
-
-.review{
-background:#fafafa;
-padding:10px;
-margin:10px;
-border-radius:5px;
-}
-
-input,textarea,select{
-width:90%;
-padding:10px;
-margin:8px;
-border:1px solid #ccc;
-border-radius:5px;
-}
-
-button{
-background:#ff4d4d;
-color:white;
-border:none;
-padding:12px 30px;
-font-size:16px;
-border-radius:5px;
-cursor:pointer;
-}
-
-button:hover{
-background:#e60000;
-}
-
-/* Floating WhatsApp */
-
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:20px;
-text-decoration:none;
-}
-
+body{font-family:Arial, Helvetica, sans-serif;background:#f4f4f4;margin:0}
+header{background:#000;color:#fff;text-align:center;padding:25px}
+.container{max-width:1000px;margin:auto;padding:20px}
+.card{background:#fff;padding:20px;border-radius:10px;margin-bottom:20px;box-shadow:0 0 10px rgba(0,0,0,0.1)}
+.gallery{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;margin-top:15px}
+.gallery img{width:220px;border-radius:10px;transition:transform 0.3s;cursor:pointer}
+.gallery img:hover{transform:scale(1.05)}
+.price{font-size:24px;color:#e60000;font-weight:bold}
+.features{text-align:left;max-width:700px;margin:auto}
+form{display:flex;flex-direction:column;gap:12px;margin-top:15px}
+input,select{padding:12px;font-size:16px}
+button{padding:14px;background:#000;color:#fff;border:none;font-size:18px;cursor:pointer;border-radius:6px}
+button:hover{opacity:0.9}
+.total{font-size:20px;font-weight:bold}
+.callbtn{display:inline-block;margin-top:15px;background:green;color:white;padding:12px 22px;text-decoration:none;border-radius:6px;font-weight:bold;margin-right:10px}
+.timer{font-size:20px;color:#ffcc00;margin-top:10px}
+.review{background:#f9f9f9;padding:15px;border-radius:8px;margin-top:15px;box-shadow:0 0 5px rgba(0,0,0,0.1)}
+.stock{color:red;font-weight:bold;margin-top:10px}
+.flex-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+.sticky-order{position:fixed;bottom:0;left:0;width:100%;background:#000;color:#fff;padding:15px;text-align:center;z-index:1000}
+.sticky-order a{color:#fff;text-decoration:none;font-size:20px;font-weight:bold;margin:0 10px}
+.popup{position:fixed;top:20px;right:20px;background:#fffae6;padding:15px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.2);display:none;z-index:2000}
+@media(max-width:768px){.gallery img{width:100%;max-width:250px}} 
 </style>
 </head>
-
 <body>
 
-<div class="header">
-Natural Hair Color
-</div>
+<header>
+<h1>🔥 প্রিমিয়াম কোয়ালিটি স্টাইলিশ লেদার হ্যান্ডব্যাগ</h1>
+<p>আকর্ষণীয় ডিজাইন | সীমিত সময়ের অফার</p>
+<div class="timer">অফার শেষ হতে বাকি: <span id="countdown"></span></div>
+</header>
 
 <div class="container">
 
 <div class="card">
-
-<div class="slider">
-<img id="slide" src="https://i.ibb.co.com/tPY43dbr/hair-color.jpg">
+<h2>প্রোডাক্ট ছবি</h2>
+<div class="gallery">
+<img src="https://i.ibb.co.com/pjby8nhP/radbag.jpg" alt="radbag">
+<img src="https://i.ibb.co.com/Gb0R2Z1/bbag.jpg" alt="bbag">
+<img src="https://i.ibb.co.com/bMrYjXpM/3inonee.jpg" alt="3inonee">
+</div>
+<p class="price">মূল্য: 1900 টাকা</p>
+<p>🚚 ডেলিভারি চার্জ: 100 টাকা</p>
+<div class="features">
+<p><b>ম্যাটেরিয়াল:</b> উন্নতমানের সফট লেদার দিয়ে তৈরি।</p>
+<p><b>জায়গা:</b> মোবাইল, মেকআপ কিট এবং প্রয়োজনীয় জিনিস রাখার জন্য পর্যাপ্ত স্পেস।</p>
+<p><b>ডিজাইন:</b> আধুনিক ও মার্জিত ডিজাইন যা যেকোনো পোশাকের সাথে মানানসই।</p>
+<p><b>স্থায়িত্ব:</b> মজবুত স্টিচিং ও ভালো মানের চেইন ব্যবহার করা হয়েছে।</p>
+<p class="stock">শুধুমাত্র 10টি বাকি!</p>
+</div>
 </div>
 
-<h2>Natural Hair Color</h2>
-
-<p>100% safe and easy hair coloring solution.</p>
-
-<div class="price" id="price">1200 BDT</div>
-
-<div class="stock">
-⚡ Only <span id="stock">7</span> Pieces Left
-</div>
-
-<div class="offer">
-🔥 Special Offer Today Only
-</div>
-
-<h3>Customer Reviews</h3>
-
-<div class="review">⭐️⭐️⭐️⭐️⭐️ Very good product</div>
-<div class="review">⭐️⭐️⭐️⭐️ Works perfectly</div>
-
-<h3>Order Now</h3>
-
+<div class="card">
+<h2>অর্ডার করুন</h2>
 <form action="https://formspree.io/f/mwvreava" method="POST">
-
-<input type="text" name="name" placeholder="Your Name" required>
-
-<input type="text" name="phone" placeholder="Phone Number" required>
-
-<textarea name="address" placeholder="Your Address" required></textarea>
-
-<label>Select Quantity</label>
-
-<select name="quantity" onchange="changePrice(this.value)">
-
-<option value="1">1 Piece</option>
-<option value="2">2 Pieces</option>
-<option value="3">3 Pieces</option>
-
+<input type="text" name="Customer Name" placeholder="আপনার নাম" required>
+<input type="tel" name="Phone Number" placeholder="মোবাইল নাম্বার" required>
+<input type="text" name="Address" placeholder="ডেলিভারি ঠিকানা" required>
+<label>ব্যাগের রং নির্বাচন করুন</label>
+<select name="Bag Color">
+<option>Red</option>
+<option>Black</option>
+<option>Brown</option>
 </select>
-
-<br>
-
-<button type="submit">Place Order</button>
-
+<label>পরিমাণ</label>
+<select id="qty" name="Quantity" onchange="calculate()">
+<option value="1">1 পিস</option>
+<option value="2">2 পিস</option>
+<option value="3">3 পিস</option>
+</select>
+<p class="total">মোট দাম: <span id="total">2000</span> টাকা</p>
+<input type="hidden" name="Total Price" id="totalInput">
+<button type="submit">অর্ডার করুন</button>
 </form>
-
+<div class="flex-row">
+<a class="callbtn" href="tel:01402438309">📞 কল করুন: 01402438309</a>
+<a class="callbtn" href="https://wa.me/8801402438309" target="_blank" style="background:#25D366">💬 WhatsApp এ অর্ডার</a>
+</div>
+<div class="review">
+<h3>Customer Reviews</h3>
+<p>⭐⭐⭐⭐⭐ - খুব সুন্দর এবং টেকসই ব্যাগ, দ্রুত ডেলিভারি।</p>
+<p>⭐⭐⭐⭐ - কালার ঠিক যেমন দেখানো হয়েছে, খুব পছন্দ হয়েছে।</p>
+</div>
 </div>
 
 </div>
 
-<a class="whatsapp-float" href="https://wa.me/880XXXXXXXXXX">
-💬
-</a>
+<div class="sticky-order">
+<a href="https://wa.me/8801402438309" target="_blank">💬 WhatsApp এ অর্ডার</a>
+<a href="tel:01402438309">📞 কল করুন</a>
+</div>
+
+<div class="popup" id="popup">⚡ নতুন অর্ডার এসেছে! মাত্র কয়েক মিনিট আগে!</div>
 
 <script>
+function calculate(){
+let price=1900
+let delivery=100
+let qty=document.getElementById('qty').value
+let total=(price*qty)+delivery
 
-/* Price change */
+document.getElementById('total').innerText=total
 
-function changePrice(q){
-
-if(q==1){
-document.getElementById("price").innerText="1200 BDT";
+document.getElementById('totalInput').value=total
 }
+calculate()
 
-if(q==2){
-document.getElementById("price").innerText="2200 BDT";
-}
-
-if(q==3){
-document.getElementById("price").innerText="3000 BDT";
-}
-
-}
-
-/* Image Slider */
-
-var images=[
-"https://i.ibb.co.com/tPY43dbr/hair-color.jpg",
-"https://i.ibb.co.com/tPY43dbr/hair-color.jpg",
-"https://i.ibb.co.com/tPY43dbr/hair-color.jpg"
-];
-
-var i=0;
-
+let time=86400
 setInterval(function(){
+let h=Math.floor(time/3600)
+let m=Math.floor((time%3600)/60)
+let s=time%60
 
-i++;
+document.getElementById('countdown').innerHTML=h+"h "+m+"m "+s+"s"
 
-if(i>=images.length){
-i=0;
-}
+time--
+},1000)
 
-document.getElementById("slide").src=images[i];
-
-},3000);
-
-/* Stock counter */
-
-var stock=7;
-
+// Fake recent order popup
 setInterval(function(){
-
-if(stock>3){
-stock--;
-document.getElementById("stock").innerText=stock;
-}
-
-},8000);
-
+let popup=document.getElementById('popup')
+popup.style.display='block'
+setTimeout(()=>{popup.style.display='none'},4000)
+},15000)
 </script>
 
 </body>
