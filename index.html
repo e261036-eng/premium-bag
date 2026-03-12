@@ -39,11 +39,11 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
 (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '644197594499070'); // Insert your pixel ID here
+fbq('init', '1447998573343969'); // New Pixel ID
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=644197594499070&ev=PageView&noscript=1"/></noscript>
+src="https://www.facebook.com/tr?id=1447998573343969&ev=PageView&noscript=1"/></noscript>
 <!-- End Facebook Pixel Code -->
 
 <header>
@@ -151,7 +151,18 @@ document.getElementById('orderForm').addEventListener('submit', function(){
     fbq('track', 'Purchase');
   }
 });
+
+// Optional: Track WhatsApp click
+document.querySelector('a[href*="wa.me"]').addEventListener('click', function(){
+  if (typeof fbq !== 'undefined') fbq('trackCustom', 'WhatsAppClick');
+});
+
+// Optional: Track Call click
+document.querySelector('a[href*="tel:"]').addEventListener('click', function(){
+  if (typeof fbq !== 'undefined') fbq('trackCustom', 'CallClick');
+});
 </script>
 
 </body>
 </html>
+
